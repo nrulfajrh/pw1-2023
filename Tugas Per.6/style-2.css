@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 2;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: arial ;
+    background-color: rgb(192, 191, 191);
+    color: #000000;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #000000;
+    color: rgb(232, 232, 232);
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+header h1 {
+    font-size: 2.2em;
+}
+
+section {
+    background-color: rgb(247, 247, 230);
+    margin-left: 220px ;
+    margin-right: 220px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 2)
+}
+
+section h2 {
+    font-size: 1.6em;
+    margin-bottom: 5px;
+}
+
+section li{
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+section p{
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+section img{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+section table{
+    background-color: whitesmoke;
+}
+
+section form{
+    font-size: 1em;
+    line-height: 1.2;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td{
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {margin-bottom: 10px ;
+} 
+
+form{
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form input[type="date"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #555;
+}
+
+footer{
+    text-align: center;
+    background-color: #000000;
+    color: rgb(232, 232, 232);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
