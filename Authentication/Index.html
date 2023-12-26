@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+</head>
+<style>
+    .judul h1{
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    body {
+      font-family: sans-serif;
+      background-color: rgb(250, 233, 211);
+    }
+
+    form {
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    input {
+      width: 93%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      background-color: rgb(249, 240, 229);
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #dbae6f;
+      color: #000000;
+      border: none;
+      cursor: pointer;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-weight: bold;
+      font-size: medium;
+    }
+
+    label {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-weight: bold;
+    }
+
+    ::placeholder{
+      font-style: italic;
+      color: grey;
+    }
+
+    fieldset {
+      margin-left: 30%;
+      margin-right: 30%;
+      margin-top: 10%;
+      margin-bottom: 10%;
+      padding-bottom: 5%;
+      background-color: white;
+    }
+
+</style>
+<body>
+  <fieldset>
+    <legend>fill in here</legend>
+      <div class="judul">
+        <h1>Login Form</h1> <br>
+      </div>  
+      <form action="" method="GET">
+      <label for="">Username</label>
+      <input type="text" name="username" id="username" placeholder="Username">
+      <label for="">Password</label>
+      <input type="password" name="password" id="password" placeholder="Password">
+      <button type="submit" onclick="return login()"> Login</button>
+      </form>
+  </fieldset>
+</body>
+<script src="authentic.js"></script>
+</html>

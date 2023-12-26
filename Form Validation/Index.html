@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: antiquewhite;
+        }
+
+        .error-message {
+            color: red;
+        }
+        
+        legend {
+            font-size: larger;
+            font-weight: bold;
+
+        }
+
+        fieldset {
+            background-color: white;
+            margin-left: 25%;
+            margin-right: 25%;
+            margin-top: 10%;
+            padding-bottom: 5%;
+            padding-top: 5%;
+        }
+
+        .judul {
+            font-size: larger;
+            font-weight: bold;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+
+        label {  
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        input {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+    <fieldset>
+    <legend>Booking Form</legend>
+    <form id="bookingForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" maxlength="30" required>
+
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <br><br>
+
+        <label for="departureTime">Departure Time:</label>
+        <input type="text" id="departureTime" name="departureTime" placeholder="HH:mm" pattern="^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$" required>
+
+        <br><br>
+
+        <label for="numTickets">Number of Tickets:</label>
+        <input type="number" id="numTickets" name="numTickets" min="1" max="10" required>
+
+        <br><br>
+
+        <input type="button" value="Submit" onclick="validateForm()">
+    </form>
+
+    </form>
+
+    <div id="errorMessages" class="error-message"></div>
+    <div id="formData"></div>
+    </fieldset>
+    <script>
+        
+        function validateForm() {
+            // Reset error messages
+            document.getElementById("errorMessages").innerHTML = "";
+
+            // Get input values
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var departureTime = document.getElementById("departureTime").value;
+            var numTickets = document.getElementById("numTickets").value;
+
+            // Validation
+            var errors = [];
+
+            if (name.length === 0 || name.length > 30) {
+                errors.push("Name is required and should be less than 30 characters.");
+            }
+
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                errors.push("Please enter a valid email address.");
+            }
+
+            var timeRegex = /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/;
+            if (!timeRegex.test(departureTime)) {
+                errors.push("Please enter a valid departure time in 24-hour format (HH:mm).");
+            }
+
+            if (numTickets < 1 || numTickets > 10 || isNaN(numTickets) || numTickets % 1 !== 0) {
+                errors.push("Number of tickets should be an integer between 1 and 10.");
+            }
+
+            // Display errors or form data
+            if (errors.length > 0) {
+                displayErrors(errors);
+            } else {
+                displayFormData(name, email, departureTime, numTickets);
+            }
+        }
+
+        function displayErrors(errors) {
+            var errorMessage = "<ul>";
+
+            errors.forEach(function(error) {
+                errorMessage += "<li>" + error + "</li>";
+            });
+
+            errorMessage += "</ul>";
+
+            document.getElementById("errorMessages").innerHTML = errorMessage;
+        }
+
+        function displayFormData(name, email, departureTime, numTickets) {
+            var formData = "<h3>Valid Data!</h3>";
+            formData += "<p><strong>Name:</strong> " + name + "</p>";
+            formData += "<p><strong>Email:</strong> " + email + "</p>";
+            formData += "<p><strong>Departure Time:</strong> " + departureTime + "</p>";
+            formData += "<p><strong>Number of Tickets:</strong> " + numTickets + "</p>";
+
+            document.getElementById("formData").innerHTML = formData;
+        }
+    </script>
+</body>
+</html>
